@@ -12,14 +12,19 @@ const app = express();
 
 // Security middleware (must run before routes to properly respond to preflight requests)
 app.use(helmet());
-// Configure CORS to allow all origins
+// Configure CORS with environment-specific origins
 app.use(cors({
-  origin: '*',
-  credentials: false
+  origin: config.cors.origin,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Ensure preflight OPTIONS requests always receive CORS headers
-app.options('*', cors({ origin: '*', credentials: false }));
+app.options('*', cors({ 
+  origin: config.cors.origin, 
+  credentials: true 
+}));
 
 // Rate limiting
 const limiter = rateLimit({
