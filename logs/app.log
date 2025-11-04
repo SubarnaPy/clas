@@ -223,3 +223,7 @@
 {"level":"info","message":"Server running on port 5112 in development mode","service":"node-express-backend","timestamp":"2025-11-04 10:55:30"}
 {"level":"info","message":"API documentation available at http://localhost:5112/api-docs","service":"node-express-backend","timestamp":"2025-11-04 10:55:30"}
 {"err":"jwt expired","level":"warn","message":"Invalid access token","path":"/api/excel-sheet/6908de912fa517bbdfc93639","service":"node-express-backend","timestamp":"2025-11-04 11:04:30","token":"eyJhbGci..."}
+{"level":"info","message":"MCQ routes registered:","routes":["GET /categories","GET /","GET /config","POST /validate","GET /:id","POST /","POST /bulk","PUT /:id","DELETE /:id"],"service":"node-express-backend","timestamp":"2025-11-04 16:58:27"}
+{"level":"info","message":"MongoDB connected successfully to development database","service":"node-express-backend","timestamp":"2025-11-04 16:58:28"}
+{"level":"info","message":"Server running on port 5112 in development mode","service":"node-express-backend","timestamp":"2025-11-04 16:58:28"}
+{"level":"info","message":"API documentation available at http://localhost:5112/api-docs","service":"node-express-backend","timestamp":"2025-11-04 16:58:28"}

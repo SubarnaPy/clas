@@ -48,7 +48,23 @@ const config = {
   },
   
   cors: {
-    origin: process.env.CORS_ORIGIN || 'http://localhost:5173'
+    origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+
+      // Parse allowed origins from environment variable
+      const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173,http://localhost:8080,https://musical-alpaca-00c8b2.netlify.app')
+        .split(',')
+        .map(url => url.trim());
+
+      // Check if the origin is allowed
+      if (allowedOrigins.includes(origin) || allowedOrigins.includes('*')) {
+        return callback(null, true);
+      }
+
+      // Reject the request
+      return callback(new Error('Not allowed by CORS'));
+    }
   },
   
   logging: {

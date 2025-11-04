@@ -21,9 +21,9 @@ app.use(cors({
 }));
 
 // Ensure preflight OPTIONS requests always receive CORS headers
-app.options('*', cors({ 
-  origin: config.cors.origin, 
-  credentials: true 
+app.options('*', cors({
+  origin: config.cors.origin,
+  credentials: true
 }));
 
 // Rate limiting
