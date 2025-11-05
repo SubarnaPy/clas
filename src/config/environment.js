@@ -53,7 +53,7 @@ const config = {
       if (!origin) return callback(null, true);
 
       // Parse allowed origins from environment variable
-      const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173,http://localhost:8080,https://musical-alpaca-00c8b2.netlify.app')
+      const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173,http://localhost:8080,https://musical-alpaca-00c8b2.netlify.app,https://heroic-panda-73ae99.netlify.app')
         .split(',')
         .map(url => url.trim());
 
